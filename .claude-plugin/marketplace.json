@@ -1,0 +1,14 @@
+{
+  "name": "togo",
+  "owner": { "name": "ToGO", "email": "info@3x1.io", "url": "https://to-go.dev" },
+  "metadata": { "description": "The official ToGO marketplace for Claude Code.", "version": "0.1.0" },
+  "plugins": [
+    {
+      "name": "togo",
+      "source": "./",
+      "description": "Start and drive togo apps with Claude Code — /togo:new scaffolds a full-stack Go+React app, specialist agents + conventions guide the build, and the public togo MCP is auto-connected.",
+      "category": "framework",
+      "keywords": ["golang", "react", "fullstack", "scaffold", "mcp"]
+    }
+  ]
+}

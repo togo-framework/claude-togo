@@ -1,0 +1,24 @@
+name: validate
+on:
+  push: { branches: [main] }
+  pull_request:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate plugin.json + marketplace.json
+        run: |
+          set -e
+          jq empty .claude-plugin/plugin.json
+          jq empty .claude-plugin/marketplace.json
+          jq -e '.name == "togo"' .claude-plugin/plugin.json > /dev/null
+          jq -e '.plugins[0].source == "./"' .claude-plugin/marketplace.json > /dev/null
+          jq empty hooks/hooks.json
+          echo "manifests valid"
+      - name: Frontmatter present on commands + agents
+        run: |
+          for f in commands/togo/*.md agents/*.md; do
+            head -n1 "$f" | grep -q '^---$' || { echo "missing frontmatter: $f"; exit 1; }
+          done
+          echo "frontmatter ok"

@@ -1,0 +1,14 @@
+{
+  "name": "togo",
+  "displayName": "ToGO — full-stack Go + React",
+  "version": "0.1.0",
+  "description": "Start and drive togo apps with Claude Code: generators, specialist agents, conventions, and the togo MCP auto-connected. One binary — Go API + React UI, zero glue.",
+  "author": { "name": "ToGO", "email": "info@3x1.io" },
+  "homepage": "https://to-go.dev",
+  "repository": "https://github.com/togo-framework/claude-togo",
+  "license": "MIT",
+  "keywords": ["togo", "golang", "go", "react", "fullstack", "framework", "scaffold", "generator", "artisan", "sqlc", "atlas", "graphql", "openapi", "mcp", "ai-native"],
+  "mcpServers": {
+    "togo": { "type": "http", "url": "https://mcp.to-go.dev/mcp" }
+  }
+}
